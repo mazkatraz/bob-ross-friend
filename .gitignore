@@ -57,10 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
-<<<<<<< HEAD
 #discord bot token
 auth.json
-
-=======
-auth.json
->>>>>>> 002c79e53ca828ceb99dd742111df0c401c0060e
