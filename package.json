@@ -1,11 +1,11 @@
 {
-  "name": "bob-ross-friend",
-  "version": "1.0.0",
-  "description": "There's nothing wrong with having a tree as a friend.",
-  "main": "bot.js",
-  "author": "Mazkatraz/Chance",
-  "dependencies": {
-    "discord.io": "^2.5.3",
-    "winston": "^2.4.0"
-  }
+	"name": "bob-ross-friend",
+	"version": "1.0.0",
+	"description": "There's nothing wrong with having a tree as a friend.",
+	"main": "bot.js",
+	"author": "Mazkatraz/Chance",
+	"dependencies": {
+		"discord.io": "^2.5.3",
+		"winston": "^2.4.0"
+	}
 }
