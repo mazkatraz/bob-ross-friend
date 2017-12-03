@@ -1,6 +1,6 @@
 var Discord = require('discord.io');
 var logger = require('winston');
-var XmlHttp = require('xmlhttprequest')
+var XmlHttp = require('xmlhttprequest');
 var auth = require('./auth.json');
 // Configure logger settings
 logger.remove(logger.transports.Console);
@@ -44,24 +44,24 @@ bot.on('message', function(user, userID, channelID, message, evt) {
                     message: 'Pong!'
                 });
                 break;
-			case 'fightme':
-				// makes the bot say something and delete the message. As an example, it's open to anyone to use. 
-				// To get the "message" itself we join the `args` back into a string with spaces: 
-				//const sayMessage = args.join(" ");
-				// Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
-				//message.delete().catch(O_o => {});
-				bot.sendMessage({
+            case 'fightme':
+                // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
+                // To get the "message" itself we join the `args` back into a string with spaces: 
+                //const sayMessage = args.join(" ");
+                // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
+                //message.delete().catch(O_o => {});
+                bot.sendMessage({
                     to: channelID,
                     message: "Square up, " + user + '.'
                 });
-				break;
-			case 'bob':
-				if (message.toLowerCase().includes("bob")) {
-					bot.sendMessage({
-						to: channelID,
-						message: "Well hello there, " + user + '.'
-					});
-				}
+                break;
+            case 'bob':
+                if (message.toLowerCase().includes("bob")) {
+                    bot.sendMessage({
+                        to: channelID,
+                        message: "Well hello there, " + user + '.'
+                    });
+                }
                 break;
             case 'showme':
                 var offset = getRandomIntInclusive(1, 100);
@@ -77,7 +77,7 @@ bot.on('message', function(user, userID, channelID, message, evt) {
                         to: channelID,
                         message: getRandomPainting(response)
                     });
-                })
+                });
                 break;
                 // Just add any case commands if you want to..
         }
@@ -95,7 +95,7 @@ function getRandomPainting(response) {
     try {
         var json = JSON.parse(response);
         var randomIndex = getRandomIntInclusive(1, 10);
-        var result = json.items[randomIndex].link;
+        result = json.items[randomIndex].link;
     } catch (err) {
         logger.info(err);
     }
@@ -126,7 +126,7 @@ function httpGetAsync(theUrl, callback)
     xmlHttp.onreadystatechange = function() { 
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
             callback(xmlHttp.responseText);
-    }
+    };
     xmlHttp.open("GET", theUrl, true); // true for asynchronous 
     xmlHttp.send(null);
 }
